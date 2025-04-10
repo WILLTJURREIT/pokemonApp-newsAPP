@@ -13,7 +13,7 @@ class PokemonRepository(
  // ❌ Wrong: bypasses RetrofitClient
    // private val apiService = PokemonApiService.create()
 
-    private val apiService = RetrofitClient.apiService// ✅ Uses your singleton instance
+    private val apiService = RetrofitClient.apiService// ✅ Uses the singleton instance
 
     suspend fun getPokemons(limit: Int, offset: Int): PokemonResponse {
         return apiService.getPokemons(limit, offset) // added Parameters to match PokemonApi

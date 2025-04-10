@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class Pokemon(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val name: String,
-    val type: String,  // Example fields
+    val type: String,
     val weight: Float
 )

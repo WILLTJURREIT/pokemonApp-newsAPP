@@ -16,6 +16,9 @@ class PokemonViewModel(private val repository: PokemonRepository) : ViewModel() 
     private val _pokemonList = MutableLiveData<PokemonResponse>()
     val pokemonList: LiveData<PokemonResponse> = _pokemonList
 
+    private val _filteredPokemonList = MutableLiveData<List<Pokemon>>()
+    val filteredPokemonList: LiveData<List<Pokemon>> = _filteredPokemonList
+
     fun fetchPokemons(limit: Int = 20, offset: Int = 0) {
         viewModelScope.launch {
             try {
@@ -26,6 +29,17 @@ class PokemonViewModel(private val repository: PokemonRepository) : ViewModel() 
             }
         }
     }
+
+    fun filterPokemons(query: String) {
+        val allPokemons = _pokemonList.value?.results ?: return
+
+        val filteredList = allPokemons.filter {
+            it.name.contains(query, ignoreCase = true)
+        }
+
+        _filteredPokemonList.value = filteredList
+    }
+
     fun removeFavorite(id: Int) {
         viewModelScope.launch {
             repository.removeFavorite(id)
