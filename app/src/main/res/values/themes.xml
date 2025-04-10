@@ -1,8 +1,8 @@
 <resources>
-    <style name="Base.Theme.PokemonApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.thepokemonapp" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/green</item>
         <item name="android:statusBarColor">@color/lightGreen</item>
     </style>
-    <style name="Theme.PokemonApp" parent="Base.Theme.PokemonApp" />
+    <style name="Theme.PokemonApp" parent="Base.Theme.thepokemonapp" />
 </resources>

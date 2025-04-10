@@ -7,33 +7,38 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.thepokemonapp.ui.adapter.PokemonAdapter
-import com.example.thepokemonapp.viewmodels.PokemonViewModel
 import com.example.thepokemonapp.databinding.FragmentFavoritesBinding
+import com.example.thepokemonapp.ui.adapter.FavoritePokemonAdapter
+import com.example.thepokemonapp.viewmodels.PokemonViewModel
+
 
 class FavoritesFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoritesBinding
+    private lateinit var adapter: FavoritePokemonAdapter
     private val viewModel: PokemonViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentFavoritesBinding.inflate(inflater, container, false)
-
-        val adapter = PokemonAdapter(emptyList()) { pokemon ->
-            viewModel.removeFavorite(pokemon.id)
+    ): View {
+        adapter = FavoritePokemonAdapter(emptyList()) { favorite ->
+            viewModel.removeFavorite(favorite.id)
         }
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = adapter
 
-        viewModel.favoritePokemonList.observe(viewLifecycleOwner, { favorites ->
+
+        val adapter = FavoritePokemonAdapter(emptyList()) { favorite ->
+            viewModel.removeFavorite(favorite.id)
+        }
+
+        binding.favoritesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.favoritesRecyclerView.adapter = adapter
+
+
+        viewModel.favoritePokemons.observe(viewLifecycleOwner) { favorites ->
             adapter.submitList(favorites)
-        })
-
-        viewModel.getFavorites()
+        }
 
         return binding.root
     }

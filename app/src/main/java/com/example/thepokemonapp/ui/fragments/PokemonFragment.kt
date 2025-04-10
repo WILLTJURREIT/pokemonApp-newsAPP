@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.thepokemonapp.databinding.FragmentPokemonListBinding
+import com.example.thepokemonapp.db.FavoritePokemon
 import com.example.thepokemonapp.ui.adapter.PokemonAdapter
 import com.example.thepokemonapp.viewmodels.PokemonViewModel
 
@@ -25,16 +26,23 @@ class PokemonFragment : Fragment() {
         pokemonViewModel = ViewModelProvider(this).get(PokemonViewModel::class.java)
 
         pokemonAdapter = PokemonAdapter { pokemon ->
-            // Handle item click
+            val favorite = FavoritePokemon(
+                id = pokemon.id,
+                name = pokemon.name,
+                weight = pokemon.weight,
+                type = pokemon.type
+            )
+            pokemonViewModel.addToFavorites(favorite)
+
+            binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            binding.recyclerView.adapter = pokemonAdapter
+
+            pokemonViewModel.pokemonList.observe(viewLifecycleOwner) { response ->
+                pokemonAdapter.submitList(response.results)
+            }
         }
-
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = pokemonAdapter
-
-        pokemonViewModel.pokemonList.observe(viewLifecycleOwner, {
-            pokemonAdapter.submitList(it)
-        })
-
+        //this will fetch the data from the API
+        pokemonViewModel.fetchPokemons()
         return binding.root
-    }
-}
+
+}}

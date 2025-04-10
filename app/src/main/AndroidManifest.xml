@@ -7,11 +7,15 @@
         android:label="PokemonApp"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
-        android:theme="@style/Theme.PokemonApp">
+        android:theme="@style/Theme.PokemonApp"
+        android:exported="true">
 
-
-        <activity android:name="com.example.thepokemonapp.PokemonActivity">
-
+        <activity android:name="com.example.thepokemonapp.PokemonActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 

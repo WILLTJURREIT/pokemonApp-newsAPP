@@ -14,4 +14,12 @@
         android:name="com.example.thepokemonapp.ui.SecondFragment"
         android:label="Second Fragment"
         tools:layout="@layout/fragment_second" />
+    <item
+        android:id="@+id/pokemonFragment"
+        android:title="@string/pokemon" />
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:title="@string/favorites" />
+
 </navigation>

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.thepokemonapp.R
 import com.example.thepokemonapp.databinding.ItemPokemonBinding
 import com.example.thepokemonapp.models.Pokemon
 
@@ -26,14 +27,19 @@ class PokemonAdapter(
         private val binding: ItemPokemonBinding,
         private val onItemClick: (Pokemon) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        private var currentPokemon: Pokemon? = null
+
         init {
             binding.root.setOnClickListener {
-                binding.pokemon?.let { pokemon -> onItemClick(pokemon) }
+                currentPokemon?.let { pokemon -> onItemClick(pokemon) }
             }
         }
 
         fun bind(pokemon: Pokemon) {
-            binding.pokemon = pokemon
+            currentPokemon = pokemon
+            binding.pokemonName.text = pokemon.name
+            binding.pokemonWeight.text = binding.root.context.getString(R.string.pokemon_weight, pokemon.weight)
 
         }
     }

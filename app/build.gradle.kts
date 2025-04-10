@@ -3,6 +3,12 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")// added -
+// Without KAPT, the generated classes won't be created
+// properly, and your data binding features (like the ones
+// we just implemented for SearchFragment) will not work.
+
+
 }
 
 android {
@@ -16,6 +22,12 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        packagingOptions {
+            resources {
+                excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            }
+        }
+
     }
 
     buildTypes {
@@ -39,6 +51,8 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
+
     }
 }
 

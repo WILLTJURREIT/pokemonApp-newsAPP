@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.NavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.thepokemonapp.models.Pokemon
 import com.example.thepokemonapp.viewmodels.PokemonViewModel
-import com.example.thepokemonapp.ui.adapter.PokemonAdapter
+
 
 class PokemonActivity : AppCompatActivity() {
 
@@ -34,16 +31,6 @@ class PokemonActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
 
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        val adapter = PokemonAdapter()
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
-
-
-        pokemonViewModel.allPokemons.observe(this, Observer { pokemons ->
-
-            pokemons?.let { adapter.submitList(it) }
-        })
 
 
         val newPokemon = Pokemon(id = 0, name = "Pikachu", type = "Electric", weight = 6.0f)

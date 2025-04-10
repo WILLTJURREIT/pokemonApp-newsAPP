@@ -5,4 +5,9 @@
     <string name="search_news">Search pokemon…</string>
     <string name="pokemon_id">Pokemon ID</string>
     <string name="pokemon_name">Pokemon Name</string>
+    <string name="pokemon_weight">Weight: %1$.1f</string>
+    <string name="weight_text">Weight: %.1f</string>
+    <string name="favorites">Favorites</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="error_occurred">Error occurred</string>
 </resources>
