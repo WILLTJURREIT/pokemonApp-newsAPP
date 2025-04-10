@@ -1,0 +1,33 @@
+<!-- res/navigation/pokemon_nav_graph.xml -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pokemonFragment">
+
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.example.thepokemonapp.ui.fragments.PokemonFragment"
+        android:label="Pokemon List"
+        tools:layout="@layout/fragment_pokemon_list" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.thepokemonapp.ui.fragments.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.thepokemonapp.ui.fragments.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+    </fragment>
+</navigation>

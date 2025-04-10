@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/firstFragment">
 
-    <item
-        android:id="@+id/headlinesFragment"
-        android:title="Headlines"
-        android:icon="@drawable/baseline_headlines_24" />
-
-    <item android:id="@+id/favouritesFragment"
-        android:title="Favourites"
-        android:icon="@drawable/heart_icon" />
-
-    <item android:id="@+id/searchFragment"
-        android:title="Search"
-        android:icon="@drawable/search_icon" />
-</menu>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.thepokemonapp.ui.FirstFragment"
+        android:label="First Fragment"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.thepokemonapp.ui.SecondFragment"
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_second" />
+</navigation>

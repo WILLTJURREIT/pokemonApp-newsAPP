@@ -6,16 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.thenewsapp"
+    namespace = "com.example.thepokemonapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.thenewsapp"
+        applicationId = "com.example.thepokemonapp"
         minSdk = 28
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,46 +27,49 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
+    // Core & UI Libraries
     implementation(libs.androidx.core.ktx.v1120)
     implementation(libs.androidx.appcompat.v161)
     implementation(libs.material.v1100)
     implementation(libs.androidx.constraintlayout.v214)
+    implementation(libs.androidx.adapters)
+    implementation(libs.androidx.databinding.adapters)
+
+    // Test Libraries
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit.v115)
     androidTestImplementation(libs.androidx.espresso.core.v351)
 
-    // Architectural Components
+    // Lifecycle Components
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // Room
+    // Room Database
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
-
-    // Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-    // Coroutine Lifecycle Scopes
-    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-
-    // Retrofit
+    // Retrofit for Networking
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
@@ -76,21 +78,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    // Glide
+    // Glide for Image Loading
     implementation(libs.glide)
     ksp(libs.compiler)
 
-
-
-
-
-    // Kotlin Coroutines for background tasks
-    implementation(libs.kotlinx.coroutines.android.v164)
-
-    // Gson for parsing API response
+    // Gson for API parsing
     implementation(libs.gson)
-
-    // Glide for image loading
-    implementation(libs.glide.v4132)
-    ksp(libs.compiler.v4132)
 }
