@@ -41,8 +41,8 @@
    This integration went smoothly at first, and I was able to make successful API requests and retrieve data for Pokémon in a list format.
 
 10.  ### **Room Database Setup**
-   Since I wanted to store the user’s favorite Pokémon, I set up a `Room` database. I created an entity, `FavoritePokemon`, to store the selected Pokémon, and I created the DAO (`FavoritePokemonDAO`) to handle insertions and queries.
-   I then implemented a `PokemonRepository` class to act as a middle layer, abstracting the interaction between the database and the UI layer (i.e., `PokemonViewModel`).
+    Since I wanted to store the user’s favorite Pokémon, I set up a `Room` database. I created an entity, `FavoritePokemon`, to store the selected Pokémon, and I created the DAO (`FavoritePokemonDAO`) to handle insertions and queries.
+    I then implemented a `PokemonRepository` class to act as a middle layer, abstracting the interaction between the database and the UI layer (i.e., `PokemonViewModel`).
 
 11. ### **ViewModel and UI Updates**
     I worked on the `PokemonViewModel` to manage data fetching and database interactions, exposing a `LiveData` list of favorite Pokémon for the UI. I implemented a click listener in the `PokemonAdapter` to allow users to add or remove Pokémon from their favorites list. This involved using `LiveData` to observe changes and update the UI automatically.
