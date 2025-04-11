@@ -33,16 +33,20 @@ class PokemonFragment : Fragment() {
                 type = pokemon.type
             )
             pokemonViewModel.addToFavorites(favorite)
-
-            binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            binding.recyclerView.adapter = pokemonAdapter
-
-            pokemonViewModel.pokemonList.observe(viewLifecycleOwner) { response ->
-                pokemonAdapter.submitList(response.results)
-            }
         }
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = pokemonAdapter
+
+
+// Observes pokemonList LiveData from the ViewModel. When the list updates,
+// submitList() efficiently updates the RecyclerView
+// without needing to manually call notifyDataSetChanged().
+        pokemonViewModel.pokemonList.observe(viewLifecycleOwner) { response ->
+            pokemonAdapter.submitList(response.results)//this
+        }
+
         //this will fetch the data from the API
         pokemonViewModel.fetchPokemons()
         return binding.root
-
-}}
+    }
+}
