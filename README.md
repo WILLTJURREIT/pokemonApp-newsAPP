@@ -160,7 +160,7 @@
 
 
 
-📚 ### **Note:**
+### 📚  **Note:**
    During the development process, I reached a point where it became necessary to remove the remaining files from the original NewsApp structure. After closely analyzing and mirroring its design and architecture, I determined that fully removing the parallel NewsApp components would help minimize potential conflicts and simplify debugging efforts moving forward.
 
 
@@ -278,7 +278,8 @@ I’m still currently dealing with a `java.lang.IllegalAccessError` that occurs 
 ## 🚧 **1**
 ![New-ISSUE](image/issue-1.png)
 
-**Note:** This issue is unlikely to be directly caused by your code itself. It’s more related to the environment setup and how your project interacts with the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT).
+## **Note:** 
+This issue is unlikely to be directly caused by your code itself. It’s more related to the environment setup and how your project interacts with the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT).
 
 
 ## 🚧 **2**
