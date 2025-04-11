@@ -334,105 +334,105 @@ Despite addressing all noticeable errors and cleaning up unused files, I am curr
 
 
 ### 1. `com.example.thepokemonapp/api/`
-#### - **Purpose**:
+#### ⚙️ **Purpose**:
  Contains the API-related classes (`PokemonApi.kt` and `RetrofitClient.kt`) to handle network requests and fetch Pokémon data.
-#### - **How it meets the requirements**: 
+#### 🎯 **How it meets the requirements**: 
 Fetches Pokémon data to display in the app.
   
 
 ### 2. `com.example.thepokemonapp/db/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Holds database files like `FavoritePokemon.kt` and `FavoritePokemonDAO.kt` for storing favorite Pokémon locally.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Saves user-selected Pokémon as favorites in the app’s database.
   
 
 ### 3. `com.example.thepokemonapp/models/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Contains data models (`Pokemon.kt`, `PokemonResponse.kt`) 
-#### - **How it meets the requirements**: 
+#### 🎯 **How it meets the requirements**: 
 Manages how Pokémon data is structured and fetched for display in the app.
   
 
 ### 4. `com.example.thepokemonapp/repository/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Contains (`PokemonRepository.kt`) to handle Pokémon data. The repository acts as a central point where data is fetched
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Manages how Pokémon data is structured and fetched for display in the app.
   
 
 ### 5. `com.example.thepokemonapp/ui/adapter/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Includes adapters (`favoritePokemonAdapter.kt` and `PokemonAdapter.kt`) that bind Pokémon data to RecyclerViews for display.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Displays lists of Pokémon and favorites in the UI.
   
 
 ### 6. `com.example.thepokemonapp/ui/fragments/`
-#### - **Purpose**:
+#### ⚙️ **Purpose**:
  Holds fragments (`FavoritesFragment.kt`, `PokemonFragment.kt`, `SearchFragment.kt`) that manage the app’s UI screens, like showing Pokémon lists and favorites.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Displays different sections of the app such as Pokémon list, favorites, and search results.
   
 
 ### 7. `com.example.thepokemonapp/utils/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Includes the utility file `Resources.kt`for managing resources and helper functions. 
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Can help in managing resources for future scalability.
   
 
 ### 8. `com.example.thepokemonapp/viewmodels/`
-#### - **Purpose**:
+#### ⚙️ **Purpose**:
  Contains the `PokemonViewModel.kt`, which handles business logic and UI data for the app.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Follows the MVVM pattern to separate UI and business logic.
   
 
 ### 9. `com.example.thepokemonapp/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Contains `PokemonActivity.kt`, the main entry point of the app.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Manages app navigation, UI setup, and serves as the controller for launching the Pokémon-related fragments and other UI elements.
   
 
 ### 10. `app/res/layout/`
-#### - **Purpose**:
+#### ⚙️ **Purpose**:
  Holds the layout XML files  like `activity_pokemon.xml`, `fragment_favorites.xml`& more,that define the visual structure of the app.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Displays the app’s user interface for the Pokémon, favorites, and search fragments.
 
 
 ### 11. `app/res/menu/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Includes menu resources like `bottom_navigation_menu.xml` to define the app's navigation menu.
-#### - **How it meets the requirements**:
+#### 🎯**How it meets the requirements**:
  Allows users to navigate between Pokémon, favorites, and search sections.
 
 
 ### 12. `app/res/navigation/`
-#### - **Purpose**: 
+#### ⚙️ **Purpose**: 
 Contains the navigation graph (`pokemon_nav_graph.xml`) for managing app navigation between fragments.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Defines the flow of the app from one fragment to another.
 
 
 ### 13. `build.gradle.kts` (2 files)
-#### - **Purpose**:
+#### ⚙️ **Purpose**:
  Manages the build configuration, dependencies, and settings for the app.
-#### - **How it meets the requirements**:
+#### 🎯 **How it meets the requirements**:
  Ensures the app is set up and built correctly with all necessary dependencies.
 
 ---
 
 ## General Summary of Usage:
-#### - **Data Handling**:
+#### 🎯**Data Handling**:
  Fetches and stores Pokémon data via API (`PokemonApi.kt`), database (`FavoritePokemon.kt`), and repository (`PokemonRepository.kt`).
-#### - **UI Display**:
+#### 🎯**UI Display**:
  Displays Pokémon data using RecyclerView adapters (`PokemonAdapter.kt`), fragments (`FavoritesFragment.kt`, `PokemonFragment.kt`), and layouts.
-#### - **Architecture**:
+#### 🎯**Architecture**:
 Follows **MVVM** (Model-View-ViewModel) pattern with ViewModels (`PokemonViewModel.kt`) to manage business logic and UI data.
-#### - **User Interaction**:
+#### 🎯**User Interaction**:
  Saves favorite Pokémon locally and provides smooth navigation between Pokémon, favorites, and search screens.
 
 
@@ -454,7 +454,7 @@ This note is included to ensure full transparency about how AI was used — as a
 ---
 
 
-## > 💡 *This project reflects my ability to problem-solve, adapt quickly, and work through technical limitations to meet my goals.*  
+## 💡 *This project reflects my ability to problem-solve, adapt quickly, and work through technical limitations to meet my goals.*  
 > Despite setbacks and time constraints, I’m proud of the progress I made.
 
 ## **Lessons Learned and Reflection**
