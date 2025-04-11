@@ -273,6 +273,36 @@ Based on my error and research on it,
 I’m still currently dealing with a `java.lang.IllegalAccessError` that occurs when trying to run the app. The error is happening because Kotlin’s annotation processing tool, Kapt, is trying to access a class (JavaCompiler) that is part of the jdk.compiler module, but this module doesn’t export its internal classes to Kapt. This is causing a conflict because the new JDK version (21) is more restrictive about access to internal Java modules.
 
 
+### 🚧**Error Messages**🚧  
+
+
+🚧 **1**
+![alt text](image/issue-1.png)
+
+**Note:** This issue is unlikely to be directly caused by your code itself. It’s more related to the environment setup and how your project interacts with the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT).
+
+
+🚧 **2**
+![alt text](image/issue-2.png)
+
+**Note:** This is the first time I have encountered this type of error.
+
+
+🚧 **3**
+![alt text](image/issue-3.png)
+
+**Note:** This is a common error I encounter and usually requires:
+1. File -> Invalidate Caches / Restart
+2. Click "Invalidate and Restart"
+3. Close Android Studio
+4. Navigate to your project folder
+5. Delete the `build` folder
+6. Reopen Android Studio
+7. Sync Gradle
+8. Rebuild Project
+9. Restart the computer (if needed)
+
+
 ### **Final Thoughts:**
 
 Despite addressing all noticeable errors and cleaning up unused files, I am currently unable to run my app due to ongoing Gradle and configuration issues. While the app is free from significant errors, these build-related issues prevent me from fully testing its functionality. This makes it difficult to ensure the app is operating as expected, as I cannot perform necessary runtime tests to verify the implementation of features like data fetching, UI interactions, and database operations. These technical roadblocks are hindering the completion of my project, as testing and debugging are crucial for identifying any remaining issues and ensuring the app meets all requirements.
