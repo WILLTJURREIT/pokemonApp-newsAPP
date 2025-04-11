@@ -131,22 +131,22 @@
 
 ## 📚 What I Learned
 
-1. **Error Reading Is Key**
+1. #### **Error Reading Is Key**
    Carefully reading each error message—line by line—was one of the most valuable lessons. It helped me understand where problems were happening and how to fix them methodically.
    
   
-2. **Build Process Awareness**
+2. #### **Build Process Awareness**
    I learned how important it is to understand the build process of Android apps. Knowing when and why to clean, rebuild, or restart the IDE helped me navigate difficult development moments.
    
 
-3. **Adaptability in Development**
+3. #### **Adaptability in Development**
    Being flexible and pivoting between project ideas (Coin Clicker → NewsApp → PokémonApp) was a challenging but important skill. In a real-world scenario, adapting to issues and deadlines is essential.
    
 
-4. **Importance of Backups**
+4. #### **Importance of Backups**
    Losing a project due to a crash taught me the importance of version control (GitHub) and frequent backups. I now plan to use Git consistently for future projects.
    
-5. **Project Structure and Design Approach**
+5. #### **Project Structure and Design Approach**
    Initially, I struggled to determine which files were necessary and found it difficult to remember the project structure. As a result, I created many files while experimenting, but later had to delete several of them as they were unnecessary. Through this process, I gained a better understanding of the overall project structure and design. Moving forward, I plan to start with a visual layout on paper to better organize the structure and minimize development time, as this approach aligns with my learning style.
 
 
@@ -160,7 +160,7 @@
 
 
 
-📚 **Note:**
+📚 ### **Note:**
    During the development process, I reached a point where it became necessary to remove the remaining files from the original NewsApp structure. After closely analyzing and mirroring its design and architecture, I determined that fully removing the parallel NewsApp components would help minimize potential conflicts and simplify debugging efforts moving forward.
 
 
@@ -244,11 +244,11 @@ offset=0	Starts the list at the first Pokémon (offset 0 = start)
 
 ## **Issues I faced:**
 
-**JDK Compatibility Issue with Android Studio**
+### **JDK Compatibility Issue with Android Studio**
 
 During the setup of my Android Studio project, I encountered issues with Java Development Kit (JDK) compatibility. The project required JDK 8 for proper compilation, but I was running a newer version of OpenJDK (JDK 21). This mismatch caused errors during build and sync, as the project couldn’t recognize or use the correct version of JDK.
 
-**Steps Taken to Resolve the Issue:**
+### **Steps Taken to Resolve the Issue:**
 
 Installed JDK 8: I installed the appropriate version of JDK (AdoptOpenJDK 8) which is compatible with Android development.
 
@@ -258,40 +258,40 @@ Configured JAVA_HOME: I set the JAVA_HOME environment variable to ensure Android
 
 Gradle Sync: After making the changes, Still Android Studio continued to use its default JDK, which is a newer version then the one I was attempting to use. 
 
-**Note: Issue Ongoing - I moved the file to another location but still issues**
+#### **Note: Issue Ongoing - I moved the file to another location but still issues**
 
 
-**Challenges Faced:**
+## **Challenges Faced:**
 
-`gradle.properties`
+### `gradle.properties`
 Path issues with special characters and spaces in folder names caused some initial errors. Attempts were made to resolve this by correctly formatting the paths and ensuring proper escaping for spaces and backslashes, but all seemed to now work. 
 
 ### 🚧 **Example of Issue I’m Facing:**🚧 
 
-Based on my error and research on it,
+#### Based on my error and research on it,
 I’m still currently dealing with a `java.lang.IllegalAccessError` that occurs when trying to run the app. The error is happening because Kotlin’s annotation processing tool, Kapt, is trying to access a class (JavaCompiler) that is part of the jdk.compiler module, but this module doesn’t export its internal classes to Kapt. This is causing a conflict because the new JDK version (21) is more restrictive about access to internal Java modules.
 
 
 ### 🚧**Error Messages**🚧  
 
 
-🚧 **1**
+## 🚧 **1**
 ![New-ISSUE](image/issue-1.png)
 
 **Note:** This issue is unlikely to be directly caused by your code itself. It’s more related to the environment setup and how your project interacts with the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT).
 
 
-🚧 **2**
+## 🚧 **2**
 ![New-ISSUE](image/issue-2.png)
 
-**Note:**
+## **Note:**
  This is the first time I have encountered this type of error.
 
 
-🚧 **3**
+## 🚧 **3**
 ![Common-issue](image/issue-3.png)
 
-**Note:** 
+## **Note:** 
 This is a common error I encounter and usually requires:
 1. File -> Invalidate Caches / Restart
 2. Click "Invalidate and Restart"
@@ -304,15 +304,15 @@ This is a common error I encounter and usually requires:
 9. Restart the computer (if needed)
 
 
-🚧 **4**
+## 🚧 **4**
 ![New-Warning](image/error-5.png)
 
-**Note:**
+## **Note:**
 The most likely cause is that the Gradle script hasn’t been properly synced or loaded, often due to issues with the Gradle configuration or connectivity problems.
 
 
 
-### **Final Thoughts:**
+## **Final Thoughts:**
 
 Despite addressing all noticeable errors and cleaning up unused files, I am currently unable to run my app due to ongoing Gradle and configuration issues. While the app is free from significant errors, these build-related issues prevent me from fully testing its functionality. This makes it difficult to ensure the app is operating as expected, as I cannot perform necessary runtime tests to verify the implementation of features like data fetching, UI interactions, and database operations. These technical roadblocks are hindering the completion of my project, as testing and debugging are crucial for identifying any remaining issues and ensuring the app meets all requirements.
 
@@ -326,9 +326,9 @@ Despite addressing all noticeable errors and cleaning up unused files, I am curr
 ## **Assignment - Requirements - Met - How & Why:** 
 
  
-**Project Folder Structure Overview** 
+### **Project Folder Structure Overview** 
 
-🗂️ Folder-by-Folder Breakdown of the Pokemon App
+##### 🗂️ Folder-by-Folder Breakdown of the Pokemon App
 
 
 ### 1. `com.example.thepokemonapp/api/`
@@ -408,7 +408,7 @@ Despite addressing all noticeable errors and cleaning up unused files, I am curr
 ---
 
 
-📌 *Note on AI Assistance*
+## 📌 *Note on AI Assistance*
 
 I would like to acknowledge that I have used AI (ChatGPT) as a tool throughout this project to assist with troubleshooting and problem-solving.
 
@@ -422,7 +422,7 @@ This note is included to ensure full transparency about how AI was used — as a
 ---
 
 
-> 💡 *This project reflects my ability to problem-solve, adapt quickly, and work through technical limitations to meet my goals.*  
+## > 💡 *This project reflects my ability to problem-solve, adapt quickly, and work through technical limitations to meet my goals.*  
 > Despite setbacks and time constraints, I’m proud of the progress I made.
 
 ## **Lessons Learned and Reflection**
