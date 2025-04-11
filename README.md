@@ -45,28 +45,28 @@
    I then implemented a `PokemonRepository` class to act as a middle layer, abstracting the interaction between the database and the UI layer (i.e., `PokemonViewModel`).
 
 11. ### **ViewModel and UI Updates**
-   I worked on the `PokemonViewModel` to manage data fetching and database interactions, exposing a `LiveData` list of favorite Pokémon for the UI. I implemented a click listener in the `PokemonAdapter` to allow users to add or remove Pokémon from their favorites list. This involved using `LiveData` to observe changes and update the UI automatically.
+    I worked on the `PokemonViewModel` to manage data fetching and database interactions, exposing a `LiveData` list of favorite Pokémon for the UI. I implemented a click listener in the `PokemonAdapter` to allow users to add or remove Pokémon from their favorites list. This involved using `LiveData` to observe changes and update the UI automatically.
 
 12. ### **Challenges and Errors Encountered**
-   While I was able to set up most of the core functionality for the app, I ran into a few persistent errors that I had to address along the way.
+    While I was able to set up most of the core functionality for the app, I ran into a few persistent errors that I had to address along the way.
 
 13. ### **Unresolved References and Typo Errors**
-   I faced a few errors related to unresolved references in my code. One common issue was a simple typo in variable names, such as the misnamed `_filteredPokemonL` instead of `_filteredPokemonList`. This caused a chain of errors, but once I identified the mistake and corrected it, everything worked smoothly again.
+    I faced a few errors related to unresolved references in my code. One common issue was a simple typo in variable names, such as the misnamed `_filteredPokemonL` instead of `_filteredPokemonList`. This caused a chain of errors, but once I identified the mistake and corrected it, everything worked smoothly again.
 
 14. ### **Retrofit and Gson Parsing Issues**
-   I ran into issues parsing the Pokémon data returned from the API. Initially, the response wasn’t mapping correctly to my data model. This was because the JSON structure I was receiving didn’t directly match my Kotlin data class.
-   I had to adjust my data model to match the exact structure of the response and use Gson annotations to handle some of the discrepancies, such as handling nested objects in the response.
+    I ran into issues parsing the Pokémon data returned from the API. Initially, the response wasn’t mapping correctly to my data model. This was because the JSON structure I was receiving didn’t directly match my Kotlin data class.
+    I had to adjust my data model to match the exact structure of the response and use Gson annotations to handle some of the discrepancies, such as handling nested objects in the response.
 
 15. ### **Gradle Sync Issues and Dependency Conflicts** 
-   Throughout the project, I encountered various Gradle sync issues, particularly when updating dependencies like Retrofit and Gson. Some updates conflicted with other dependencies, causing issues with building the app.
-   I resolved these by carefully checking the Gradle versions and ensuring all libraries were compatible with the version of Android Studio I was using.
+    Throughout the project, I encountered various Gradle sync issues, particularly when updating dependencies like Retrofit and Gson. Some updates conflicted with other dependencies, causing issues with building the app.
+    I resolved these by carefully checking the Gradle versions and ensuring all libraries were compatible with the version of Android Studio I was using.
 
 16. ### **RecyclerView Adapter and Binding Errors**
-   Another issue I faced was binding the Pokémon list data correctly in the `RecyclerView`. I had set up data binding with the adapter, but there were issues where the adapter wasn’t notifying the `RecyclerView` of updates after adding or removing favorites.
-   In the `PokemonFragment.kt` file, I updated the list of favorite Pokémon by calling `submitList()` on the `PokemonAdapter`. This ensures the `RecyclerView` is efficiently updated with the new data without the need for manually calling `notifyDataSetChanged()`.
+    Another issue I faced was binding the Pokémon list data correctly in the `RecyclerView`. I had set up data binding with the adapter, but there were issues where the adapter wasn’t notifying the `RecyclerView` of updates after adding or removing favorites.
+    In the `PokemonFragment.kt` file, I updated the list of favorite Pokémon by calling `submitList()` on the `PokemonAdapter`. This ensures the `RecyclerView` is efficiently updated with the new data without the need for manually calling `notifyDataSetChanged()`.
 
 17. ### **Final Stages: Testing and Debugging**
-   Once the main error free structure was in place, I began researching testing.Moving  forward, i will focus on unit testing the ViewModel and Repository to ensure the logic is correct. Also, write UI tests to check if user interactions, like clicking items or adding favorites, work as expected. For debugging, use log statements and the Android Studio Debugger to track issues. Test on different devices and edge cases to ensure stability and smooth performance.
+    Once the main error free structure was in place, I began researching testing.Moving  forward, i will focus on unit testing the ViewModel and Repository to ensure the logic is correct. Also, write UI tests to check if user interactions, like clicking items or adding favorites, work as expected. For debugging, use log statements and the Android Studio Debugger to track issues. Test on different devices and edge cases to ensure stability and smooth performance.
 
 
 
