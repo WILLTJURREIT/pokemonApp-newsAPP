@@ -258,7 +258,8 @@ Configured JAVA_HOME: I set the JAVA_HOME environment variable to ensure Android
 
 Gradle Sync: After making the changes, Still Android Studio continued to use its default JDK, which is a newer version then the one I was attempting to use. 
 
-#### **Note: Issue Ongoing - I moved the file to another location but still issues**
+#### **Note:** 
+Issue Ongoing - I moved the file to another location but still issues
 
 
 ## **Challenges Faced:**
@@ -279,7 +280,7 @@ I’m still currently dealing with a `java.lang.IllegalAccessError` that occurs 
 ![New-ISSUE](image/issue-1.png)
 
 ## **Note:** 
-This issue is unlikely to be directly caused by your code itself. It’s more related to the environment setup and how your project interacts with the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT).
+The issue appears to be less about the code itself and more related to the setup of the development environment. Specifically, it seems to be an interaction problem between the project and the Java Development Kit (JDK), Kotlin, and annotation processing (KAPT). Given that these tools are critical for the build process, any misconfiguration or incompatibility can cause errors that may not be immediately apparent in the codebase. It seems that the project may be experiencing some inconsistency with the versions of these tools or their integration, leading to the issue observed. (ChatGPT info)
 
 
 ## 🚧 **2**
