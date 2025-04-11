@@ -12,60 +12,60 @@
 
 # ✅ Progress report 
 
-1. **Early Gradle Issues**
+1. ### **Early Gradle Issues**
    At the start of Coding Assignments 1 and 2, I spent a significant amount of time learning how to resolve Gradle configuration issues in Android Studio. This slowed down my initial development progress.
    
-2. **Original Plan: Coin Clicker App**
+2. ### **Original Plan: Coin Clicker App**
    I initially worked on a **Coin Clicker App** and had completed roughly 75% of it, which would have accounted for Coding Assignments 2 & 3.
    
-3. **Project Loss & Studio Crash** 
+3. ### **Project Loss & Studio Crash** 
    Unfortunately, my project was lost due to a crash in Android Studio. I mistakenly deleted a critical Gradle file while troubleshooting, which caused the project to become unrecoverable. I reached out to my instructor for support, and he was very understanding and flexible.
    
-4. **Backup Plan: Modify the NewsApp**
+4. ### **Backup Plan: Modify the NewsApp**
    Due to time constraints and workload from other courses, I planned to modify the **NewsApp tutorial project** to meet the assignment requirements while making it functionally and visually different.
    
-5. **API Limitations** 
+5. ### **API Limitations** 
    I began by changing layout colors and API data within the NewsApp. However, I discovered that the default API did not support switching between countries as I had hoped.
    
-6. **Final Pivot: Pokémon API Integration** 
+6. ### **Final Pivot: Pokémon API Integration** 
    Inspired by my instructor’s use of a **Pokémon API**, I decided to pivot to a new idea and integrate this API instead. This change came very late in the term but felt achievable given the simplicity of the Pokémon data structure.
 
-7. **Recovery Strategy**
+7. ### **Recovery Strategy**
    Given my previous setbacks with Android Studio, I focused on building a version of the app that would be stable, functional, and well-scoped for the assignment requirements.
 
-8. **Pokémon API Integration**
+8. ### **Pokémon API Integration**
    After pivoting to use the Pokémon API, I set out to integrate it into my app. This was a fresh start with a new set of challenges, but the structure of the Pokémon data was more straightforward compared to the NewsApp API I had initially tried.
 
-8.1 **Initial Setup and Retrofit Integration**
+9. ### **Initial Setup and Retrofit Integration**
    The first step was to integrate Retrofit to make API calls. I created a `PokemonApi.kt` interface, defining endpoints for fetching the Pokémon data from the PokéAPI.
    This integration went smoothly at first, and I was able to make successful API requests and retrieve data for Pokémon in a list format.
 
-8.2 **Room Database Setup**
+10.  ### **Room Database Setup**
    Since I wanted to store the user’s favorite Pokémon, I set up a `Room` database. I created an entity, `FavoritePokemon`, to store the selected Pokémon, and I created the DAO (`FavoritePokemonDAO`) to handle insertions and queries.
    I then implemented a `PokemonRepository` class to act as a middle layer, abstracting the interaction between the database and the UI layer (i.e., `PokemonViewModel`).
 
-8.2 **ViewModel and UI Updates**
+11. ### **ViewModel and UI Updates**
    I worked on the `PokemonViewModel` to manage data fetching and database interactions, exposing a `LiveData` list of favorite Pokémon for the UI. I implemented a click listener in the `PokemonAdapter` to allow users to add or remove Pokémon from their favorites list. This involved using `LiveData` to observe changes and update the UI automatically.
 
-9. **Challenges and Errors Encountered**
+12. ### **Challenges and Errors Encountered**
    While I was able to set up most of the core functionality for the app, I ran into a few persistent errors that I had to address along the way.
 
-9.1 **Unresolved References and Typo Errors**
+13. ### **Unresolved References and Typo Errors**
    I faced a few errors related to unresolved references in my code. One common issue was a simple typo in variable names, such as the misnamed `_filteredPokemonL` instead of `_filteredPokemonList`. This caused a chain of errors, but once I identified the mistake and corrected it, everything worked smoothly again.
 
-9.2 **Retrofit and Gson Parsing Issues**
+14. ### **Retrofit and Gson Parsing Issues**
    I ran into issues parsing the Pokémon data returned from the API. Initially, the response wasn’t mapping correctly to my data model. This was because the JSON structure I was receiving didn’t directly match my Kotlin data class.
    I had to adjust my data model to match the exact structure of the response and use Gson annotations to handle some of the discrepancies, such as handling nested objects in the response.
 
-9.3 **Gradle Sync Issues and Dependency Conflicts** 
+15. ### **Gradle Sync Issues and Dependency Conflicts** 
    Throughout the project, I encountered various Gradle sync issues, particularly when updating dependencies like Retrofit and Gson. Some updates conflicted with other dependencies, causing issues with building the app.
    I resolved these by carefully checking the Gradle versions and ensuring all libraries were compatible with the version of Android Studio I was using.
 
-9.4 **RecyclerView Adapter and Binding Errors**
+16. ### **RecyclerView Adapter and Binding Errors**
    Another issue I faced was binding the Pokémon list data correctly in the `RecyclerView`. I had set up data binding with the adapter, but there were issues where the adapter wasn’t notifying the `RecyclerView` of updates after adding or removing favorites.
    In the `PokemonFragment.kt` file, I updated the list of favorite Pokémon by calling `submitList()` on the `PokemonAdapter`. This ensures the `RecyclerView` is efficiently updated with the new data without the need for manually calling `notifyDataSetChanged()`.
 
-10. **Final Stages: Testing and Debugging**
+17. ### **Final Stages: Testing and Debugging**
    Once the main error free structure was in place, I began researching testing.Moving  forward, i will focus on unit testing the ViewModel and Repository to ensure the logic is correct. Also, write UI tests to check if user interactions, like clicking items or adding favorites, work as expected. For debugging, use log statements and the Android Studio Debugger to track issues. Test on different devices and edge cases to ensure stability and smooth performance.
 
 
